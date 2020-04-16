@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+<title>Mother's Day Special</title>
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    .name{
+        font-weight: 900;
+        color: rgb(53, 78, 82);
+        background-color: rgb(153,212,228);
+        padding: 20px 20px 15px 20px;
+    }
+    .name:hover{
+        background-color: rgb(53, 78, 82);
+        color: rgb(153,212,228);
+    }
+    .subname{
+        padding-left: 15px;
+        color: rgb(247, 196, 205);
+    }
+    .title{
+        color:rgb(53, 78, 82);
+        padding: 0px 40px 0px 40px;
+        font-weight: 800;
+    }
+    .navbar-nav li a{
+        text-align: center;      
+    }
+    .navbar-nav li a:hover{
+        transition: 0.7s;
+        border-left:3px solid rgb(53, 78, 82);
+        background-color: rgb(153,212,228);
+    }
+    .coverimage img{
+        float: left;
+        height: 650px;;
+    }
+    .mainpart{
+        float: left;
+        background-image:linear-gradient(pink,white,white,pink);
+        height: 650px;
+        padding-top: 200px;
+        text-align: center;
+    }
+    .mainpart h4{
+        font-family:Georgia, 'Times New Roman', Times, serif;
+        font-size: 25px;
+        color: rgb(53, 78, 82);
+    }
+    .mainpart h1{
+        font-weight: 900;
+        color: rgb(53, 78, 82);
+        background-color: rgb(153,212,228);
+        padding: 05px 20px 5px 20px;
+        border-left: 4px solid rgb(53, 78, 82);
+        border-right: 4px solid rgb(53, 78, 82);
+        box-shadow: 1px 2px 3px rgb(53, 78, 82);
+    }
+    .date{
+        font-weight: 500;
+        font-family:Georgia, 'Times New Roman', Times, serif;
+    }
+    .sub{
+        text-align: left;
+    }
+    .editor{
+        background-color:white ;
+        padding-left: 50px;
+        padding-right: 15px;
+        border-left:3px solid rgb(53, 78, 82);
+    }
+    .sub h3{
+        font-family: monospace;
+        font-size: 25px;
+    }
+    .click {
+        text-align: center;
+        padding-left: 40px;
+        color: rgb(53, 78, 82) ;
+    }
+    .click:hover{
+        font-weight: bold;
+        
+    }
+    .sub a:hover{
+        text-decoration: none;
+    }
+    .icon{
+        margin-left: 50px;
+    }
+    .icon a{
+        padding: 10px 20px 10px 20px;
+        color: black;
+    }
+    .fa-facebook-f:hover{ 
+        color: white;
+        text-decoration: none;
+        background-color: #3b5998;
+        border-radius: 50%;
+    }
+    .fa-twitter:hover{ 
+        color: white;
+        text-decoration: none;
+        background-color: #00acee;
+        border-radius: 50%;
+    }
+    .fa-linkedin-in:hover{ 
+        color: white;
+        text-decoration: none;
+        background-color: #0e76a8;
+        border-radius: 50%;
+    }
+    .fa-github:hover{ 
+        color: white;
+        text-decoration: none;
+        background-color: #211F1F;
+        border-radius: 50%;
+    }
+    .fa-codepen:hover{ 
+        color: white;
+        text-decoration: none;
+        background-color:black;
+        border-radius: 50%;
+    }
+    .corner{
+        text-align: center;
+        background-image: url(back.jpg);
+        height: 650px;
+    }
+    .corner h4{
+        font-size: 16px;
+        margin-top: 20px;
+        font-family: monospace;
+    }
+    .corner h3{
+        font-family:cursive;
+        margin-top: 10px;
+        color: rgb(53, 78, 82);
+        background-color: pink;
+        border-left: 2px solid rgb(53, 78, 82);
+    }
+    .corner1{
+        text-align: center;
+        font-family: monospace;
+    }
+    .listhead{
+        color:rgb(53,78,82);
+        border-left: 2px solid rgb(53,78,82);
+        background-color: pink;
+    }
+    .listone,.listwo,.listhree{
+        color: black;
+        font-weight: 700;
+        font-size: 15px;
+    }
+    .corner1 a:hover {
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+    .third{
+        float: left;
+    }
+    .third img{
+        padding-top: 50px;
+        height: 200px;
+        margin-top: 100px;
+        padding-left: 00px;
+    }
+    .history{
+        float: left;
+        background-color: white;
+        background-image: url(234461-P2E33U-496.png);
+        padding-top: 70px;
+        
+    }
+    .onlyhistoryword{
+        font-weight: 800;
+       border-left: 5px solid lightcoral;
+       padding-left: 50px;
+       padding-right: 10px;
+       background-color: lightcoral;
+        color: white;
+    }
+    
+    .source{
+        color:gray;
+    }
+    .historytitle{
+        color: rgb(247, 196, 205);
+    }
+    .worddetail{
+        border-bottom: 2px solid rgb(247, 196, 205);
+        padding-right: 30px;
+    }
+    .history h3{
+        margin-top: 10px;
+        text-align: center;
+    }
+    .historycol1,.historycol2{
+        float: left;
+    }
+    .historycol21{
+        float: left;
+    }
+    .historycol22{
+        float: left;
+    }
+    .corner2 p{
+        font-size: 12px;
+        font-weight: bold;
+    }
+    .historycol222{
+        float: left;
+        margin-top: 20px;
+    }
+    
+    
+    @media (max-width: 950px){
+        .photo_back{
+            width: 100%;
+            height: 20px;
+        }
+    }
+    @media (min-width: 551px) and (max-width:949px){
+        .photo_back{
+           width: 100%;
+           height: 100%;
+
+        }
+    }
+    @media (max-width:550px){
+        .photo_back{
+           width: 100%;
+           height: 100%;
+
+        }
+    }
+    .articlelink{
+        color: lightslategrey;
+    }
+    .articlelink:hover{
+        text-decoration: none;
+        color: lightslategrey;
+        font-weight: bolder;
+    }
+    .article{
+        float: left;
+        background-color: white;
+    }
+    .article h3{
+        text-align: center;
+        margin-top: 200px;
+    }
+    .article p{
+        margin-bottom: 60px;
+    }
+    .onlyarticleword{
+        font-weight: 800;
+       border-left: 5px solid lightcoral;
+       padding-left: 50px;
+       padding-right: 10px;
+       background-color: lightcoral;
+        color: white;
+    }
+    
+    .extra{
+        float: left;
+        background-color: white;
+        height: 100%;
+    }
+    .extra img{
+        width: 100%;
+        height: 400px;
+        margin-top: 150px;
+    }
+    .articlepara{
+        font-size: 21px;
+        text-align: center;
+    }
+    .extra p{
+        background-color: lightcyan;
+        text-align: center;
+        margin-top: 60px;
+        margin-bottom: 35px;
+        font-weight: bold;
+        
+    }
+    .articlesourcelink{
+        color: black;
+    }
+    .articlesourcelink:hover{
+        text-decoration: none;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    .imgadd
+    {
+        height: 120px;
+        width: 100%;
+        margin-top: 200px;
+    }
+    .addvertise{
+        float: left;
+        padding-top: 18px;
+        background-color: white;
+    }
+    .addvertise h4{
+        margin-top: 20px;
+    }
+    .addvertise p{
+        margin-bottom: 139px;
+        text-align: center;
+    }
+    .movie{
+        float: left;
+        background-color: white;
+        margin-bottom: 30px;    
+        background-image: url(media.jpg);
+
+    }
+    .movie h3{
+        text-align: center;
+        margin-top: 50px;
+        color: lightpink;
+    }
+    .onlymovieword{
+        font-weight: 800;
+        background-color: lightcoral;
+        color: white;
+      border-left: 5px solid lightcoral;
+       padding-left: 50px;
+       margin-top: 100px;
+       padding-right: 10px;
+    }
+    .inside h5{
+        text-align: center;
+        color: rgb(53, 78, 82);
+        background-color: rgb(153,212,228);
+      
+    }
+    .inside img{
+        background-color:rgb(153,212,228);
+    }
+    .inside:hover{
+        text-decoration: none;
+        color: rgb(53, 78, 82);
+    }
+    .moviethumb{
+        margin-top: 30px;
+    }
+    .moviecol1,.moviecol2,.moviecol3{
+        float: left;
+    }
+    .image{
+        height: 570px;
+    }
+    .image1{
+        height: 270px;
+    }
+    .footer p{
+       border : 2px solid black;
+       margin-top: 200px;
+    }
+    
+    .elementlast{
+        padding-top:200px ;
+        font-weight: bold;
+        text-align: center;
+        font-size: 20px;
+        padding-bottom: 30px;
+        background-color:lightcoral;
+        border: 2px dashed lightcoral;   
+        
+    }
+    
+
+</style>
+</head>
+<body>
+    <nav id="allmycontents"class="navbar navbar-expand-lg navbar-light" style="background-color:lightcoral">
+          <a class="navbar-brand" href="index.html"><span class="name">INA</span> <span class="subname"><small>Mother's day special</small></span></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mycontent">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+        <div class="collapse navbar-collapse" id="mycontent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html"><div class="title">Home</div> </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#history"><div class="title">History</div></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#article"><div class="title">Articles</div></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#movie"><div class="title">Movie</div></a>
+                </li>
+            </ul>
+        </div>
+    </nav> 
+    
+    
+    <div class="coverimage col-lg-6 col-sm-12">
+        <img class="col-lg-12"src="3663718.jpg" height="690px">
+    </div>
+
+   <div class="mainpart col-lg-4 col-sm-6">
+        <h4>Mother's Day Special</h4>
+        <h1>INA</h1>
+        <p class="date mb-0"><em><strong>Sunday,</strong> May 10, 2020 | 27 Boishakh, 1427 </em></p>
+        <p>86/6,Unique Palace, Mirzapur, Binodpur Bazar, Rajshahi</p>    
+        <br>
+        <br>
+        <br>
+        <br>
+        
+        <hr>
+    
+        <div class="sub">
+            <h3 class="mb-0"><span class="editor">Editor</span> <span class="name1">Nashit Akhanda</span></h3>
+            <a class="mb-0"data-toggle="collapse" href="#contact" role="button"><div class="click">For details, Click here..</div></a>
+        </div>
+        <div class="collaspse" id="contact">
+            <p class="icon collapse" id="contact">
+                <a href="http://www.facebook.com/NashitAkhanda"class="fab fa-facebook-f"></a>
+                <a href="http://twitter.com/MMNashit" class="fab fa-twitter"></a>
+                <a href="http://www.linkedin.com/in/nashitakhanda"class="fab fa-linkedin-in"></a>
+                <a href="https://github.com/Akhanda99" class="fab fa-github"></a>
+                <a href="https://codepen.io/Nashit99" class="fab fa-codepen"></a>
+            </p>
+        </div>
+    <hr>
+    </div>
+
+    <div class="third col-lg-2 col-sm-6">
+        <div id="slidedata" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="corner carousel-item active">
+                    <img  src="123.png"><h3>Editor's corner</h3>
+                        <h4 >'Ina' is an online magazine in which all the contents are arranged based on mother's day. 'Ina' is a Filipino word which means mother. 
+                            I hope you will enjoy this magazine. This is my first project on web development. So, please forgive my mistakes. Stay safe! Thank you. </h4>
+                </div>
+                <div class="corner1 carousel-item">
+                    <img src="3663718.jpg"><h3>Content List</h3>
+                    <hr/>
+                        <ul>
+                            <li><a href="#history"><div class="listone"><div class="listhead"><strong>HISTORY</strong></div>Mother's Day</div></li>
+                            <hr/>
+                            <li><a href="#article"><div class="listwo"><div class="listhead"><strong>Article</strong></div><div>Mother's Day belittles a mother</div></div></li>
+                            <hr/>
+                            <li><a href="#movie"><div class="listhree"><div class="listhead"><strong>Movies</strong></div><div>Based on Mother's Day</div></div></li>
+                        </ul>
+                </div>
+            </div>
+
+            <a class="carousel-control-prev" href="#slidedata" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#slidedata" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+
+<img class="photo_back col-lg-12"src="photo_back.png">    
+
+<div class="history col-lg-12">
+    <h3 data-spy="scroll" data-target="#allmycontents"class="historytitle" id="history"><span class="onlyhistoryword">History</span> <span class="worddetail">of Mother's Day</span>
+    </h3>
+    <br>
+
+    <div class="historycol1 col-lg-6">
+        <p>Unearthing the most complete picture of the origins of Mother’s Day began with a misplaced cardboard box in the kitchen of a West Virginia church.
+        It was 2003, and Katharine Antolini, then a graduate student researching the history of motherhood, had been asked to speak at the site in Grafton, where the first known celebration of Mother’s Day took place in 1908.
+        <br>During the church tour, she stumbled upon the box on the floor of the kitchen. “Some of the documents were almost 100 years old,” she told Quartz. “I was like, ‘You can’t leave these here!'”<br>
+        Antolini offered to archive the papers, and in doing so, became fascinated with what she found: the unlikely story of Anna Jarvis, who first spent years crusading to make Mother’s Day a widely observed holiday—and then spent the rest of her life trying to undo it.
+        <br>The project inspired Antolini to keep digging, and Jarvis’ story became her PhD dissertation and later a book, <em>Memorializing Motherhood: Anna Jarvis and the Struggle for Control of Mother’s Day.</em>
+        <br>“I realized how very complicated the history was,” Antolini said. “She ultimately failed, of course. But she never gave up until her death of trying to fight for her day.”
+        <br>
+        <b>How did Mother’s Day come to be?</b><br>
+        When her mother, Ann Reeves, died in 1905, Jarvis organized the first observances of Mother’s Day at the Andrews Methodist Episcopal Church in Grafton, and later in Philadelphia, Pennsylvania.<br>
+        She chose the second Sunday in May because it was the Sunday closest to her mother’s death. The white carnation, Reeves’ favorite flower, became the holiday’s symbol.<br>
+        Jarvis, who had no kids of her own, had a singular understanding of what Mother’s Day should mean. She saw it as a day for children to visit their mothers at home and to remember the sacrifices that they had made.<br>
+        “This is not a celebration of maudlin sentiment. It is one of practical benefit and patriotism, emphasizing the home as the highest inspiration of our individual and national lives,” Jarvis wrote.<br>
+        She began a letter-writing campaign, reaching out to anyone who she thought could help promulgate the idea. “Any mayor, merchant or minister,” Antolini said. She wrote to Teddy Roosevelt. To Mark Twain. To every state governor, every year.<br>
+        By 1914, when most states had already recognized the day locally, the US congress passed a law designating Mother’s Day a national holiday. A day later, president Woodrow Wilson issued an official proclamation.<br>
+        <strong>Why did the holiday’s champion crusade against it?</strong><br>
+        As Mother’s Day grew more popular, Jarvis became distressed by what she saw as other groups co-opting the day she felt a sense of ownership over.
+        “She battled over the meaning of Mother’s Day,” Antolini said. Jarvis took issue with businesses, like greeting-card companies and florists, that she felt began exploiting “her day” to maximize their own profits.<br> </p>
+    </div>
+    <div class="historycol2 col-lg-6">
+        <p>
+        Jarvis also was angered by the actions of charities like the American War Mothers, that began selling white carnations on Mother’s Day as a fundraising tool. She once was arrested in Philadelphia for showing up unannounced at the group’s convention.<br>
+        She crashed the event, yelling at members of the nonprofit organization for exploiting Mother’s Day, Antolini said. A newspaper account said Jarvis was initially charged with disturbing the peace, but was later let off by a local magistrate.<br>
+        “It was very much tied to her ego…that was her life, her fortune—everything was invested in it,” Antolini said. “When people started to take the day and lay claim to it and use it for different purposes, that bothered her.”<br>
+        <div class="col-lg-6 historycol21">
+            <b>How is Mother’s Day celebrated today around the world?</b><br>
+            Mother’s Day is celebrated in dozens of countries around the world, often on the second Sunday of May, following the American tradition.<br>
+            In France, a 1950 law established the fête des mères on the fourth Sunday in May. Britain celebrates Mothering Sunday, the fourth Sunday of Lent. In Mexico, the day is a true national holiday, where “the entire nation stops what it is doing in the afternoon and eats some serious lunch with mom,” per the Washington Post (paywall).<br><br>
+        </div>
+        <div class="col-lg-6 historycol22">
+            <div id="slidedata2" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="corner2 carousel-item active"style="text-align: center;">
+                        <img  src="updated-sanctuary-picture.jpg" style="height:250px">
+                            <p>The church where Mother’s Day began as it looks today.</p>
+                    </div>
+                    <div class="corner3 carousel-item"style="text-align: center;">
+                        <img src="antolini_img_jarvis_gutekunst_1912_002.jpg"style="height:250px"><p>The mother of Mother’s Day, Anna Jarvis.</p>  
+                    </div>
+                    <div class="corner3 carousel-item" style="text-align: center;">
+                        <img src="letter-to-er.png"style="height:250px"><p >A letter Jarvis wrote to Eleanor Roosevelt.</p>  
+                    </div>
+                </div>
+                    
+                <a class="carousel-control-prev" href="#slidedata2" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#slidedata2" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>   
+    <div class="col-lg-6 historycol222">
+        <p>In 2012, even North Korea began its own version of the celebration, reportedly marked by a military parade (paywall).<br>
+            Today, Mother’s Day is marked by unique traditions specific to different countries and families—a fact that buoys Antolini, though she says Jarvis would have hated it.<br>
+            “She would be mad at me about this, but I think it’s a holiday that still is hugely popular precisely because it can mean different things to different people,” Antolini said. “I think that’s why it’s lasted so long—because it can mean so many things.”<br>        </p>
+            <hr><p class="source"style="text-align: left;"><em>[Taken from: QUARTZ <a targer="_blank" href="https://qz.com/980829/mothers-day-2017-when-is-it-celebrated-and-what-are-the-origins-of-the-holiday/"class="articlelink">[Article Link]</a> | written by <strong> Elisabeth Ponsot</strong> | Article Title:The history of Mother’s Day is actually quite dark]</em></p>
+    </div>    
+</div>
+
+<div class="col-lg-4 extra">
+    <img class="imgofarticle"src="article.png">
+    <p>Source Link: <a class="articlesourcelink"href="https://www.thedailystar.net/mothers-day-belittles-a-mother-23684">Click Here!</a></p>
+</div>
+
+<div class="article col-lg-6">
+    <h3 data-spy="scroll" data-target="#allmycontents"class="historytitle" id="article"><span class="onlyarticleword">Article</span> <span class="worddetail">Mother's Day belittles a mother</span></h3>
+    <br>
+    <p class="articlepara">
+        'Ma' is a simple two-lettered Bangla word that carries a profound feeling of connectedness. A mother's love for her children has no geographical boundary. A mother understands the sorrows, pains, pleasures, happiness, hunger, thirst, and the dreams of her children. When she prays, she never prays for herself, but for her children. A mother is a precious person whose small heart can accommodate the love for all her children. Mother's Day is a crude commercialisation of the value of a mother. A true Mother's Day should be reflected every moment through gratitude, respect and love. Mothers are waiting in front of the locked doors of their children's homes. Please open the door, welcome them with a big smile and embrace them warmly. Tell them we are the same soul residing in two separate persons.
+    </p>
+</div>
+
+<div class="addvertise col-lg-2">
+    
+    <div class=" add alert">
+        <h2 class="mb-0"><img src="500_F_327908055_0eVSwGLHrp4to47ifsdULCbbyz4RiosZ.jpg" class="imgadd"></h2>
+          
+        <h4 class="mb-0" style="text-align: center;">Stay Home! Stay Safe</h4>
+        <p ><i>- Editors' Panel, INA</i></p>
+        <br>
+        <br>
+    </div>
+</div>
+
+
+<div class="movie col-lg-12">
+    <h3 data-spy="scroll" data-target="#allmycontents"class="movietitle" id="movie"><span class="onlymovieword">Movie</span> <span class="worddetail">Suggestions on Mother's Day</span></h3>
+
+    <div class="moviethumb col-lg-12 col-md-12 col-sm-12">
+        <div class="moviecol1 col-lg-4 col-sm-12" >
+            <a class="inside" href="#akeelah" data-toggle="collapse" role="button">
+            <img class="col-lg-12 image"src="akeelah and the bee.jpg">
+            <h5><strong>Click for Details</strong> </h5>
+            </a>
+            <p class="collapse" id="akeelah">
+                <b>Akeelah and the Bee </b>is a 2006 American drama film written and directed by Doug Atchison. It tells the story of Akeelah Anderson (Keke Palmer), an 11-year-old girl who participates in the Scripps National Spelling Bee, her mother (Angela Bassett), her schoolmates, and her coach, Dr. Joshua Larabee (Laurence Fishburne). The cast also features Curtis Armstrong, J.R. Villarreal, Sean Michael Afable, Erica Hubbard, Lee Thompson Young, Julito McCullum, Sahara Garey, Eddie Steeples, and Tzi Ma.
+                <span><a class="detailoption"href="https://en.wikipedia.org/wiki/Akeelah_and_the_Bee">More..</a></span> 
+            </p>
+        </div>
+        <div class="moviecol2 col-lg-4 col-md-6">
+            <a class="inside" href="#steel" data-toggle="collapse" role="button">
+                <img class="image1 col-lg-12 "src="steelmagnolias.jpg">
+                <h5><strong>Click for Details</strong> </h5>
+            </a>
+            <p class="collapse" id="steel">
+            <b>Steel Magnolias</b> is a 1989 American comedy-drama film directed by Herbert Ross. It is a film adaptation of Robert Harling's 1987 play of the same name. The play and film are about the bond a group of women share in a small-town Southern community, and how they cope with the death of one of their own.<br>
+            The story is based on Robert Harling's real life experience of the death of his sister, Susan Harling Robinson, in 1985 due to complications from Type 1 diabetes. He changed his sister's name in the story from Susan to Shelby Eatenton-Latcherie.<br>
+            The title suggests the main female characters can be both as delicate as the magnolia flower, and as tough as steel.
+            <span><a class="detailoption"href="https://en.wikipedia.org/wiki/Steel_Magnolias">More..</a></span>
+            </p>
+                
+            <a class="inside" href="#soul" data-toggle="collapse" role="button">
+                <img class="image1 col-lg-12 "src="Soul-food-1997.jpg">
+                <h5><strong>Click for Details</strong> </h5>
+            </a>
+            <p class="collapse" id="soul">
+            <b>Soul Food </b>is a 1997 American comedy-drama film produced by Kenneth "Babyface" Edmonds, Tracey Edmonds and Robert Teitel and released by Fox 2000 Pictures. Featuring an ensemble cast, the film stars Vanessa L. Williams, Vivica A. Fox, Nia Long, Michael Beach, Mekhi Phifer, Jeffrey D. Sams, Irma P. Hall, Gina Ravera and Brandon Hammond. Written and directed by George Tillman, Jr.—in his major studio debut—the film centers on the trials of an extended African-American family, held together by longstanding family traditions which begin to fade as serious problems take center stage.<br>
+            Tillman based the family in the film on his own and Soul Food was widely acclaimed for presenting a more positive image of African-Americans than is typically seen in Hollywood films. In 2000, Showtime premiered a one-hour television series based upon the film. In 2015, it was announced that 20th Century Fox is planning a sequel for film called More Soul Food, written by Tillman, Jr.
+            <span><a class="detailoption"href="https://en.wikipedia.org/wiki/Soul_Food_(film)">More..</a></span> 
+            </p>            
+        </div>
+
+        <div class="moviecol3 col-lg-4 col-md-6">
+            <a class="inside" href="#brave" data-toggle="collapse" role="button">
+                <img class="image1 col-lg-12 "src="Brave_Poster.jpg">
+                <h5><strong>Click for Details</strong> </h5>
+            </a>
+            <p class="collapse" id="brave">
+                <b>Brave</b> is a 2012 American computer-animated fantasy film produced by Pixar Animation Studios and released by Walt Disney Pictures. It was directed by Mark Andrews and Brenda 
+                Chapman and co-directed by Steve Purcell. The story is by Chapman, with the screenplay by Andrews, Purcell, Chapman and Irene Mecchi. The film was produced by Katherine Sarafian,
+                with John Lasseter, Andrew Stanton, and Pete Docter as executive producers. The film's voice cast features Kelly Macdonald, Billy Connolly, Emma Thompson, Julie Walters, Robbie Coltrane, Kevin McKidd, and Craig Ferguson. Set in the Scottish Highlands, the film tells the story of a princess named Merida who defies an age-old custom, causing chaos in the kingdom by expressing the desire not to be betrothed. Merida is the first, and currently, only Disney Princess created by Pixar. The film is also dedicated to Steve Jobs, who died before the film's release.
+                <span><a class="detailoption"href="https://en.wikipedia.org/wiki/Brave_(2012_film)">More..</a></span> 
+            </p>
+            
+            <a class="inside" href="#mother" data-toggle="collapse" role="button">
+                <img class="image1 col-lg-12 "src="MV5BMzc5ODExODE0MV5BMl5BanBnXkFtZTgwNDkzNDUxMzI@._V1_.jpg">
+                <h5><strong>Click for Details</strong> </h5>
+            </a>
+            <p class="collapse" id="mother">
+                <b>Mother! </b>(stylized as mother!)[3] is a 2017 American psychological horror film written and directed by Darren Aronofsky, and starring Jennifer Lawrence, Javier Bardem, Ed Harris, and Michelle Pfeiffer. The plot follows a young woman whose tranquil life with her husband at their country home is disrupted by the arrival of a mysterious couple.<br>
+                Mother! was selected to compete for the Golden Lion at the 74th Venice International Film Festival, and premiered there on September 5, 2017.[4] It was released in the United States on September 15, 2017 by Paramount Pictures, and grossed $44 million worldwide against its $30 million budget. Although the film received generally positive reviews from critics, its biblical allegories and depiction of violence sparked controversy.
+                <span><a class="detailoption"href="https://en.wikipedia.org/wiki/Mother!">More..</a></span> 
+            </p>
+            <br>
+            <br>
+                    
+        </div>
+            
+    </div>
+
+</div>
+
+<div class="nashit">
+    <p class="elementlast">&copy;Nashit Akhanda</p>
+</div>
+</body>
+</html>
