@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+*{
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+        .fa-bars{
+            display: none;
+        }
+        .fa-close{
+            display: none;
+        }
+        .all{ 
+            height: 100vh;
+            background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.6)), url(background.jpg);
+            background-position: center;
+            background-size: cover;
+            overflow-x: hidden;
+        }
+        .nav-bar{
+            display:flex;
+            padding: 10px 100px;
+            position: relative;
+            background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.2));
+        }
+        .nav-logo img{
+            height: 60px;
+            width: auto;
+        }
+        .nav-link{
+            flex: 1;
+        }
+        .nav-link ul li{
+            list-style: none;
+            display: inline-block;
+            padding: 20px 20px 20px 20px;
+        }
+        .nav-link ul a{
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 15px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        .nav-link ul li::after{
+            content: ' ';
+            width: 0;
+            height: 2px;
+            background: yellow;
+            display: block;
+            margin: auto;
+            transition: .5s;
+        }
+        .nav-link ul li:hover::after{
+            width: 100%;
+        }
+        .btn{
+            background-color: yellow;
+            border: none;
+            font-size: 15px;
+            font-weight: bold;
+            padding: 10px 20px 10px 20px;
+            margin-top: -50px;
+            cursor: pointer;
+        }
+         
+        .nav-link .btn{
+            float: right;
+        }
+        .btn:hover{
+            border: black;
+            background-color: white;
+        }
+        .title{
+            margin: 100px 130px;
+            color: white;
+        }
+        .title h1{
+            font-size: 65px;
+            padding-top: 30px;
+            margin-bottom: 20px;
+        }
+        .title h1 span{
+            color: yellow;
+        }
+        .vertical-line{
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background-color: black;
+        }
+        .search{
+            height: 60%;
+            width: 80px;
+        }
+        .search .fa{
+            color: white;
+            padding: 60px 20px 20px 20px;
+            font-size: 35px;
+            cursor: pointer;
+            display: block;
+        }
+        .social{
+            background-color: yellow;
+            height: 40%;
+            width:80px;
+            position: absolute;
+            bottom: 0;
+            color: black;
+            padding-top: 20px;
+        }
+        .social .fa{
+            margin: 5px 20px 20px 20px;
+            display: block;
+            border: 1px solid black;
+            border-radius: 50%;
+            padding: 10px 10px 10px 10px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .social .fa:hover{
+            background-color: white;
+        }
+        .notification{
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+        .notification img{
+            height: 70px;
+            width: auto;
+            float: right;
+        }
+        .detail{
+            width: 200px;
+            height: 70px;
+            background-color: yellow;
+            float: right;
+        }
+        .detail p{
+            padding: 5px 10px 05px 10px;
+        }
+        .detail a{
+            color: black;
+            text-decoration: none;
+            font-size: 10px;
+            padding-right: 50px;
+            padding-left: 10px;
+        }
+        @media (max-width:780px) {
+            .vertical-line{
+                display: none;
+            }
+            .nav-bar {
+                padding: 10px 30px;
+            }
+            .title{
+                margin: 80px 40px;
+            }
+            .title h1{
+                font-size: 50px;
+            }
+            .fa-bars{
+                position: absolute;
+                right: 20px;
+                top: 20px;
+            }
+            .nav-bar .fa{
+                display: block;
+                color: white;
+                margin: 10px 25px;
+                font-size: 22px;
+                cursor: pointer;
+            }
+            .nav-link{
+                height: 100vh;
+                width: 200px;
+                background-color: #000;
+                top: 0;
+                right: -200px;
+                position: absolute;
+                text-align: left;
+                z-index: 2;
+            }
+            .nav-link ul a{
+                display: block;
+            }
+            .nav-link .btn{
+                float: none;
+                margin-top: 10px;
+                margin-left: 30px;
+            }
+            
+
+        }
+
+    </style>
+    <title>Sample</title>
+</head>
+<body>
+    <div class="all">
+        <div class="nav-bar">
+            <div class="nav-logo">
+                <a href="#"><img src="logo.png"></a>
+            </div>
+
+            <div class="nav-link" id="nav-link">
+                <i class="fa fa-close" onclick="closemenu()"></i>
+                <ul>
+                    <a href="#"><li>Home</li></a>
+                    <a href="#"><li>About Us</li></a>
+                    <a href="#"><li>Our Survice</li></a>
+                </ul>
+                <button type="button" class="btn">Sign Up</button>
+            </div>
+            <i class="fa fa-bars" onclick="showmenu()"></i>
+        </div>
+        <div class="title">
+            <h1>Food <span>Doesn't have<br> a religion. </span>It is a religion</h1>
+            <button type="button" class="btn">Explore</button>
+        </div>
+        <div class="vertical-line">
+            <div class="search">
+                <i class="fa fa-search"></i>
+                <i class="fa fa-list"></i>
+            </div>
+            <div class="social">
+                <i class="fa fa-facebook"></i>
+                <i class="fa fa-twitter"></i>
+                <i class="fa fa-instagram"></i>
+            </div>
+        </div>
+        <div class="notification">
+            <img src="small-pic.jpg">
+            <div class="detail">
+                <p>Buy one Get one offer!</p>
+                <a href="#">Click for Details..</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        var show= document.getElementById("nav-link");
+        function showmenu(){
+            show.style.right="0";
+        }
+        function closemenu(){
+            show.style.right="-200px";
+        }
+    </script>
+</body>
+</html>
