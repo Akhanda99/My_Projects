@@ -24,7 +24,6 @@
             background-size: cover;
             overflow-x: hidden;
         }
-           
         
         .nav-bar{
             display:flex;
@@ -306,7 +305,7 @@
             }
     
         }
-        @media (max-width:613px){
+        @media (max-width:613px)and (min-width:440px){
             .info{
                 position: absolute;
                 left:-118%;
@@ -325,7 +324,25 @@
                 font-size: 30px;
             }
         }
-           
+        @media (max-width:439px){
+            .info{
+                position: absolute;
+                left:-165%;
+
+            }
+            .control h5{
+                width: 10%;
+            }
+            .control{
+                width: 20%;
+                top: 80%;
+                text-align: center;
+
+            }
+            .control h3{
+                font-size: 30px;
+            }
+        }  
         @media (max-width:780px) {
             .vertical-line{
                 display: none;
