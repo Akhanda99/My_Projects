@@ -24,7 +24,6 @@
             background-size: cover;
             overflow-x: hidden;
         }
-        
         .nav-bar{
             display:flex;
             padding: 10px 100px;
@@ -324,7 +323,7 @@
                 font-size: 30px;
             }
         }
-        @media (max-width:439px){
+        @media (max-width:439px) and (min-width: 373px);{
             .info{
                 position: absolute;
                 left:-165%;
@@ -343,6 +342,26 @@
                 font-size: 30px;
             }
         }  
+        @media (max-width:372px) {
+            .info{
+                position: absolute;
+                left:-200%;
+
+            }
+            .control h5{
+                width: 10%;
+            }
+            .control{
+                width: 20%;
+                top: 80%;
+                text-align: center;
+
+            }
+            .control h3{
+                font-size: 30px;
+            }
+        }  
+        
         @media (max-width:780px) {
             .vertical-line{
                 display: none;
