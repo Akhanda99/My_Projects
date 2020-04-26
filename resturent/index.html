@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
 *{
@@ -22,7 +23,17 @@
             background-position: center;
             background-size: cover;
             overflow-x: hidden;
+            animation: photo 2s forwards linear;
         }
+            @keyframes photo {
+                0%{
+                    background-size: 1100px;
+                }
+                100%{
+                    background-size: 100%;
+                }
+            }
+        
         .nav-bar{
             display:flex;
             padding: 10px 100px;
@@ -32,6 +43,16 @@
         .nav-logo img{
             height: 60px;
             width: auto;
+            animation: logo 2s forwards;
+            animation-delay: 2s;
+        }
+        @keyframes logo {
+            0%{
+                transform: rotate(0);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
         }
         .nav-link{
             flex: 1;
@@ -81,6 +102,16 @@
         .title{
             margin: 100px 130px;
             color: white;
+            animation: head 2s forwards linear;
+           
+        }
+        @keyframes head {
+            0%{
+                transform: translateY(-50%);
+            }
+            100%{
+                transform: translateY(0);
+            }
         }
         .title h1{
             font-size: 65px;
@@ -155,6 +186,154 @@
             padding-right: 50px;
             padding-left: 10px;
         }
+        .service{
+            position: relative;
+            background-image: linear-gradient( rgba(0,0,0,0.6),rgba(0,0,0,0.9)), url(table-in-vintage-restaurant-6267.jpg);
+            height: 100vh;
+            background-position: center;
+            background-size: cover;
+            overflow: hidden;
+        }
+        .service h2{
+            color:white;
+            position: absolute;
+            top: 15%;
+            right: 05%;
+            font-size: 40px;
+            border-bottom: 3px solid yellow;
+            padding-left: 80px;
+        }
+        .info{
+            height: 1000px;
+            width: 1000px;
+            position: absolute;
+            top: 50%;
+            left: -5%;
+            transform: translateY(-50%);
+        }
+        #circle{
+            height: 1000px;
+            width: 1000px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 50%;
+            transform: rotate(0);
+            transition: 1s;
+        }
+        .menu img{
+            height: 120px;
+            width: 120px;
+        }
+        .menu{
+            position: absolute;
+            color: white;
+            text-align: center;
+        }
+        .one{
+            top:450px;
+            right: 50px;
+        }
+        .two{
+            top: 90px;
+            right:370px;
+            transform: rotate(-90deg);
+
+        }
+        .three{
+            bottom: 450px;
+            left: 90px;
+            transform: rotate(-180deg);
+        }
+        .four{
+            bottom: 80px;
+            left:350px;
+            
+            transform: rotate(-270deg);
+        }
+        .three img{
+            height: 110px;
+            width: 150px;
+        }
+        .control{
+            position: absolute;
+            top:50%;
+            right:5%;
+            color: white;
+            text-align: center;
+            transform: translateY(-50%);
+        }
+        #upbtn{
+            cursor: pointer;
+            font-size: 25px;
+            border: 2px solid yellow;
+            background-color: yellow;
+            color: black;
+            padding: 5px 40px 5px 40px;
+        }
+
+        #downbtn{
+            cursor: pointer;    font-size: 25px;
+            border: 2px solid yellow;
+            background-color: yellow;
+            color: black;
+            padding: 5px 40px 5px 40px;
+        }
+        .control h3{
+            font-size: 50px;
+        }
+        .layer{
+            width: 0;
+            height: 0;
+            position: absolute;
+            border-top: 500px solid white;
+            border-bottom: 500px solid white;
+            border-left: 500px solid white;
+            border-right: 500px solid transparent;
+        }
+        @media (min-width:900px) and (max-width:1200px){
+            .info{
+                position: absolute;
+                left:-40%;
+            }
+        }
+        @media (max-width:899px) and (min-width:781px){
+            .info{
+                position: absolute;
+                left:-60%;
+            }
+        }
+        @media (max-width:780px) and (min-width:614px){
+            .info{
+                position: absolute;
+                left:-93%;
+
+            }
+            .control{
+                width: 30%;
+            }
+    
+        }
+        @media (max-width:613px) and (min-width:500px){
+            .info{
+                position: absolute;
+                left:-118%;
+
+            }
+            .control h5{
+                width: 10%;
+            }
+            .control{
+                width: 20%;
+                top: 80%;
+                text-align: center;
+
+            }
+            .control h3{
+                font-size: 30px;
+            }
+        }
+           
         @media (max-width:780px) {
             .vertical-line{
                 display: none;
@@ -199,7 +378,7 @@
                 margin-left: 30px;
             }
             
-
+            
         }
 
     </style>
@@ -215,9 +394,9 @@
             <div class="nav-link" id="nav-link">
                 <i class="fa fa-close" onclick="closemenu()"></i>
                 <ul>
-                    <a href="#"><li>Home</li></a>
+                    <a href="index2.html"><li>Home</li></a>
                     <a href="#"><li>About Us</li></a>
-                    <a href="#"><li>Our Survice</li></a>
+                    <a href="#service"><li>Our Survice</li></a>
                 </ul>
                 <button type="button" class="btn">Sign Up</button>
             </div>
@@ -246,6 +425,52 @@
             </div>
         </div>
     </div>
+    
+    <div class="service" id="service">
+        <h2><span style="color:yellow;">Our</span> Services</h2>
+        
+        <div class="info">
+            <div class="layer"></div>
+            
+            <div id="circle">
+                <div class="menu one">
+                    <img src="chiken.jpg">
+                    <div>
+                    <h3>Chicken Cheese Burger</h3>
+                    <p>Price: 220tk</p>
+                </div>  
+                </div>
+                <div class="menu two">
+                    <img src="chess.jpg">
+                    <div>
+                    <h3>Mac'n Cheese Burger</h3>
+                    <p>Price: 250tk</p></div>
+                </div>
+                <div class="menu three">
+                    <img src="humburger.jpg">
+                    <div>
+                    <h3>Hamburger</h3>
+                    <p>Price: 240tk</p>
+                </div>
+                </div>
+                <div class="menu four">
+                    <img src="small-pic.jpg">
+                    <div>
+                    <h3>Buy one Get one OFFER!!</h3>
+                    <p>Price:180tk</p>
+                </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="control">
+            <h5 id="upbtn"><i class="fas fa-arrow-circle-left"></i></h5>
+            <h3>Menu List</h3>
+            <h5 id="downbtn"><i class="fas fa-arrow-circle-right"></i></h5>
+        </div>
+    </div>
+
     <script>
         var show= document.getElementById("nav-link");
         function showmenu(){
@@ -253,6 +478,21 @@
         }
         function closemenu(){
             show.style.right="-200px";
+        }
+        var circle=document.getElementById("circle");
+        var upbtn=document.getElementById("upbtn");
+        var downbtn=document.getElementById("downbtn");
+        var rotation=circle.style.transform;
+        var rotateSum;
+        upbtn.onclick= function(){
+            rotateSum= rotation+"rotate(-90deg)";
+            circle.style.transform=rotateSum;
+            rotation=rotateSum;
+        }
+        downbtn.onclick= function(){
+            rotateSum= rotation+"rotate(90deg)";
+            circle.style.transform=rotateSum;
+            rotation=rotateSum;
         }
     </script>
 </body>
