@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Unit Converter</title>
+    <style>
+        /* Whole body */
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            position: relative;
+            
+        }
+        .all{
+            height:80vh;
+            position: relative;
+            background-position: center;
+            background-size: cover;
+            overflow:hidden;
+        }
+
+        /* Top Navbar */
+        .navbar{
+            display: flex;
+            height: 65px;
+            background-color:rgba(135,206,235,0.4);
+            box-shadow: 1px 1px 4px black;
+        }
+        .nav-logo img{
+            width: 140px;
+            left: 10px;
+            top: 10px;
+            position: absolute;
+        }
+        .nav-logo h3{
+            position: absolute;
+            top: 15px;
+            left: 160px;
+            font-size: 25px;
+            font-weight: bold;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .nav-item img{
+            position: absolute;
+            height: 45px;
+            right: 15px;
+            top: 5px;
+            cursor: pointer;
+            /* border: 2px solid skyblue; */
+            border-radius: 50%;
+            box-shadow: 1px 2px 3px black;
+        }
+        #other-item{
+            position: absolute;
+            right:-200px;
+            top:15px;
+            word-spacing: 10px;
+            transition: 0.3s;
+        }
+        #other-item a{
+            color: black;
+        }
+        .fa-close{
+            font-size: 10px;
+        }
+        .fa{
+            cursor: pointer;
+        }
+        .fa-facebook:hover{
+            color: #3b5998;
+        }
+        .fa-twitter:hover{
+            color: #00acee;
+        }
+        .fa-linkedin:hover{
+            color: #0e76a8;
+        }
+        .fa-github:hover{
+            color: rgba(121, 210, 209, 0.498);
+        }
+        .fa-codepen:hover{
+            color:slategray;
+        }
+        #tips{
+            position: absolute;
+            right: 20px;
+            top: 55px;
+        }
+        #tips span{
+            font-size: 10px;
+        }
+        #tips img{
+            height: 30px;
+        }
+
+        
+        /*Column one */
+        .cover{
+            height: 400px;
+            background-color:rgba(176,224,230,0.3);
+            text-align: center;
+       }
+       .cover img{
+           height: 300px;
+           width: 40%;
+           justify-content: flex-start;
+           align-items: center;
+           margin-top: 20px;
+       }
+       .cover h1{
+           font-size: 60px;
+           margin-left: 30px;
+       }
+       .cover p{
+           position: relative;
+           letter-spacing: 18px;
+           bottom:0px;
+       }
+       .extra{
+           height: 100px;
+           background-image: url(extra.png) ;
+           background-size: cover;
+           margin-top: 0px;
+
+       }
+
+       .convert{
+           /*border: 1px solid black;*/
+           height: 500px;
+       }
+       
+       .weight-converter{
+           width: 70%;
+           height: 100%;
+           margin-left: 15%;
+           box-shadow: 1px 3px 12px black;
+           background-image: linear-gradient(white, white,rgba(176,224,230,0.3));
+       }
+       .temparature-converter{
+           width: 70%;
+           height: 100%;
+           margin-left: 15%;
+           box-shadow: 1px 3px 12px black;
+           background-image: linear-gradient(white, white,rgba(176,224,230,0.3));
+       }
+       .temparature-converter h1{
+           text-align: center;
+           font-size: 30px;
+       }
+       .length-converter{
+           width: 70%;
+           height: 100%;
+           margin-left: 15%;
+           box-shadow: 1px 3px 12px black;
+           background-image: linear-gradient(white, white,rgba(176,224,230,0.3));
+       }
+       .length-converter h1{
+           text-align: center;
+           font-size: 30px;
+       }
+       .weight-converter h1{
+           text-align: center;
+       }
+       .convert-title{
+           background-color: rgba(135,206,235,0.4);
+           font-family: cursive;
+       }
+       .from, .to{
+        float: left;
+       }
+       .from{
+           margin-left: 20px;
+           margin-top: 20px;
+       }
+       .to{
+           margin-top: 20px;
+       }
+       .from input{
+            height: 40px;
+            width: 90%;
+            border-bottom: 1px solid black;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            outline: none;
+       }
+       .to input{
+            height: 40px;
+            width: 90%;
+            float: left;
+            border-bottom: 1px solid black;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            outline: none;
+       }
+       .to input:focus, .from input:focus{
+           border-bottom: 2px solid skyblue;
+       }
+       #wwrite{
+           margin-top: 30px;
+           margin-left: 20px;
+           width: 305px;
+           height: 100px;
+           float: left;
+           font-size: 40px;
+
+       }
+       #woutput{
+           margin-top: 10px;
+           font-size: 80px;
+           text-align: center;
+       }
+       .firstportion{
+           background-image:linear-gradient( rgba(176,224,230,0.3),white);
+           
+       }
+       .convertBtn{
+           margin-top: 20px;
+           padding: 10px 30px 10px 30px;
+           left: 33%;
+           position: relative;
+           font-weight: 800;
+           background-color: skyblue;
+           border:3px solid skyblue;
+
+       }
+       .convertBtn:hover{
+            background-color: white;
+       }
+       #unit{
+          
+           font-weight: 800;
+           font-size: 25px;
+           text-align: center;
+       }
+       #twrite{
+           margin-top: 30px;
+           margin-left: 20px;
+           width: 305px;
+           height: 100px;
+           float: left;
+           font-size: 40px;
+
+       }
+       #toutput{
+           margin-top: 10px;
+           font-size: 80px;
+           text-align: center;
+       }
+       #tunit{
+          
+          font-weight: 800;
+          font-size: 25px;
+          text-align: center;
+      }
+      #lwrite{
+           margin-top: 30px;
+           margin-left: 20px;
+           width: 305px;
+           height: 100px;
+           float: left;
+           font-size: 40px;
+
+       }
+       #loutput{
+           margin-top: 10px;
+           font-size: 80px;
+           text-align: center;
+       }
+       #lunit{
+          
+          font-weight: 800;
+          font-size: 25px;
+          text-align: center;
+
+      }
+      .main-content{
+          background-color: white;
+          height: 600px;
+      }
+      .footer{
+          background-color: rgba(135,206,235,0.4);
+          padding-top: 30px;
+          text-align: center;
+          font-size: 25px;
+          padding-bottom: 30px;
+      }
+       @media (min-width: 780px) {
+           .col-lg-4{
+               width: 33.33%;
+               float: left;
+           }
+       }
+    </style>
+</head>
+<body>
+<div class="all">
+
+    <!--top navbar-->
+    <div class="navbar">
+        <div class="nav-logo">
+            <img src="logo.png">
+        </div>
+        <div class="nav-item">
+            <img src="nashit.png" onclick="social()">
+        </div>
+        <div id="other-item">
+            <i class="fa fa-close" onclick="closesocialmenu()"></i>
+            <a href="http://www.facebook.com/NashitAkhanda" target="_blank"><i class="fa fa-facebook"></i></a>
+            <a href="https://twitter.com/MMNashit" target="_blank"><i class="fa fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/nashitakhanda" target="_blank"><i class="fa fa-linkedin"></i></a>
+            <a href="https://github.com/Akhanda99" target="_blank"><i class="fa fa-github"></i></a>
+            <a href="https://codepen.io/Nashit99" target="_blank"><i class="fa fa-codepen"></i></a>
+        </div>
+    </div>
+
+    <div id="tips">
+        <i class="fa fa-close" onclick="fclosetips()"></i>
+        <span>Click for details
+        <img src="arrow.png">
+        </span>
+    </div>
+    
+    <div class="cover">
+        <img src="main.png">
+        <h1>Unit Converter</h1>
+        <p>Write | Click | Convert</p>
+    </div>
+
+    <div class="extra"></div>
+</div>
+
+<div class="main-content">
+    <div class="convert col-lg-4">
+        <div class="weight-converter">
+            <h1 class="convert-title">Weight Converter</h1>
+            <div class="firstportion">
+            <label for="from" class="from">
+                <h3>Convert From</h3><input placeholder="ex:kg/pound" type="text" name="from" id="wfrom" autocomplete="off" requird>
+            </label>
+            <label for="to" class="to">
+                <h3>Convert To</h3><input type="text" name="to" placeholder="ex:kg/pound" id="wto" autocomplete="off" requird>
+            </label>
+            <input type="text" id="wwrite" placeholder="Write Input" required>
+        </div>
+            <button type="button" class="convertBtn" onclick="convertweight()">Convert</button>
+            <div id="woutput">Output</div>
+            <div id="unit">Unit</div>
+        </div>
+    </div>
+
+
+    <div class="convert col-lg-4">
+        <div class="temparature-converter">
+            <h1 class="convert-title">Temparature Converter</h1>
+            <div class="firstportion">
+            <label for="from" class="from">
+                <h3>Convert From</h3><input placeholder="ex: cel/fahr/kel" type="text" name="from" id="tfrom" autocomplete="off" requird>
+            </label>
+            <label for="to" class="to">
+                <h3>Convert To</h3><input type="text" name="to" placeholder="ex: cel/fahr/kel" id="tto" autocomplete="off" requird>
+            </label>
+            <input type="text" id="twrite" placeholder="Write Input" required>
+        </div>
+            <button type="button" class="convertBtn" onclick="converttemp()">Convert</button>
+            <div id="toutput">Output</div>
+            <div id="tunit">Unit</div>
+        </div>
+    </div>
+
+
+
+    <div class="convert col-lg-4">
+        <div class="length-converter">
+            <h1 class="convert-title">length Converter</h1>
+            <div class="firstportion">
+            <label for="from" class="from">
+                <h3>Convert From</h3><input placeholder="ex:m/mm/cm/km/mile" type="text" name="from" id="lfrom" autocomplete="off" requird>
+            </label>
+            <label for="to" class="to">
+                <h3>Convert To</h3><input type="text" name="to" placeholder="ex:m/mm/cm/km/mile" id="lto" autocomplete="off" requird>
+            </label>
+            <input type="text" id="lwrite" placeholder="Write Input" required>
+        </div>
+            <button type="button" class="convertBtn" onclick="convertlength()">Convert</button>
+            <div id="loutput">Output</div>
+            <div id="lunit">Unit</div>
+        </div>
+    </div>
+</div>
+
+    <div class="footer"> 
+        &copy;Copyright Nashit Akhanda 2020
+    </div>
+        <script>
+        //navbar one code
+        var socialmenu = document.getElementById("other-item");
+        var closetips=document.getElementById("tips");
+        function social(){
+            socialmenu.style.right= "65px";
+        }
+        function closesocialmenu(){
+            socialmenu.style.right= "-300px";
+        }
+        function fclosetips(){
+            closetips.style.right="-300px";
+        }
+
+        function convertweight(){
+        var wfrom=document.getElementById("wfrom").value;
+        var wto=document.getElementById("wto").value;
+        var winput = document.getElementById("wwrite").value;
+        var solution;
+        var solution1;
+
+        if(wfrom=="kg" && wto=="kg" ){
+            solution= winput;
+            document.getElementById("woutput").innerHTML=solution;
+            document.getElementById("unit").innerHTML="kg"
+        }
+        else if(wfrom=="pound" && wto=="pound" ){
+            solution= winput;
+            document.getElementById("woutput").innerHTML=solution;
+            document.getElementById("unit").innerHTML="kg"
+        }    
+        else if(wfrom=="kg" && wto=="pound"){
+            solution= winput*2.20462262;
+            solution1=solution.toFixed(2);
+            document.getElementById("woutput").innerHTML=solution1;
+            if(solution==0 || solution==1){
+                document.getElementById("unit").innerHTML="pound";
+            }
+            else{
+                document.getElementById("unit").innerHTML="pounds";
+            }
+            
+        } 
+        else if(wfrom=="pound" && wto=="kg"){
+            solution= winput/2.20462262;
+            solution1=solution.toFixed(2);
+            document.getElementById("woutput").innerHTML=solution1;
+            document.getElementById("unit").innerHTML="kg"
+        }    
+        else{
+            document.getElementById("woutput").innerHTML="Try Again";
+            document.getElementById("unit").innerHTML=" Valid units are: kg/pound"
+        }
+        } 
+
+
+        function converttemp(){
+        var tfrom = document.getElementById("tfrom").value;
+        var tto = document.getElementById("tto").value;
+        var tinput = document.getElementById("twrite").value;
+        var solution;
+        var solution1;
+        if(tfrom =="cel" && tto=="fahr")
+        {
+            solution = ((9 * tinput)/5) +32;
+            solution1= solution.toFixed(2);
+            document.getElementById("toutput").innerHTML= solution1;
+            document.getElementById("tunit").innerHTML="F";
+        }
+        else if(tfrom =="cel" && tto=="kel")
+        {
+            solution = (tinput *1)+273;
+            solution1=solution;
+            document.getElementById("toutput").innerHTML= solution1;
+            document.getElementById("tunit").innerHTML="K";
+        }
+        else if(tfrom =="cel" && tto=="cel")
+        {
+            solution = (tinput *1);
+            document.getElementById("toutput").innerHTML= solution;
+            document.getElementById("tunit").innerHTML="deg. C";
+        }
+        else if(tfrom =="fahr" && tto=="cel")
+        {
+            solution = (5 * (tinput -32))/9;
+            solution1= solution.toFixed(2);
+            document.getElementById("toutput").innerHTML= solution1;
+            document.getElementById("tunit").innerHTML="C";
+        }
+        else if(tfrom =="fahr" && tto=="kel")
+        {
+            solution = (5 * (tinput -32)/9)+273;
+            solution1= solution.toFixed(2);
+            document.getElementById("toutput").innerHTML= solution1;
+            document.getElementById("tunit").innerHTML="K";
+        }
+        else if(tfrom =="fahr" && tto=="fahr")
+        {
+            solution = (tinput *1);
+            document.getElementById("toutput").innerHTML= solution;
+            document.getElementById("tunit").innerHTML="F";
+        }
+
+        else if(tfrom =="kel" && tto=="cel")
+        {
+            solution = tinput - 273;
+            solution1= solution.toFixed(2);
+            document.getElementById("toutput").innerHTML= solution1;
+            document.getElementById("tunit").innerHTML="C";
+        }
+        else if(tfrom =="kel" && tto=="fahr")
+        {
+            solution = (9*(tinput -273)/5)+32;
+            solution1= solution.toFixed(2);
+            document.getElementById("toutput").innerHTML= solution1;
+            document.getElementById("tunit").innerHTML="F";
+        }
+        else if(tfrom =="kel" && tto=="kel")
+        {
+            solution = (tinput *1);
+            document.getElementById("toutput").innerHTML= solution;
+            document.getElementById("tunit").innerHTML="K";
+        }
+        else{
+            document.getElementById("toutput").innerHTML="Try Again";
+            document.getElementById("tunit").innerHTML=" Valid units are: cel/fahr/kel"
+        }
+        
+        }
+
+        function convertlength(){
+            var lfrom = document.getElementById("lfrom").value;
+            var lto = document.getElementById("lto").value;
+            var linput= document.getElementById("lwrite").value;
+            var solution;
+            var solution1;
+
+            if(lfrom == "m" && lto=="km" ){
+                solution= linput / 1000;
+                solution1=solution.toFixed(2);
+                document.getElementById("loutput").innerHTML=solution1;
+                document.getElementById("lunit").innerHTML="km"
+            }
+            else if(lfrom == "km" && lto=="m" ){
+                solution= linput * 1000;
+                solution1=solution.toFixed(2);
+                document.getElementById("loutput").innerHTML=solution1;
+                document.getElementById("lunit").innerHTML="m"
+            }
+            else if(lfrom == "cm" && lto=="m" ){
+                solution= linput / 100;
+                solution1=solution.toFixed(2);
+                document.getElementById("loutput").innerHTML=solution1;
+                document.getElementById("lunit").innerHTML="m"
+            }
+            else if(lfrom == "m" && lto=="cm" ){
+                solution= linput * 100;
+                solution1=solution.toFixed(2);
+                document.getElementById("loutput").innerHTML=solution1;
+                document.getElementById("lunit").innerHTML="cm"
+            }
+            else if(lfrom == "cm" && lto=="km" ){
+                solution= linput / 100000;
+                solution1=solution.toFixed(4);
+                document.getElementById("loutput").innerHTML=solution1;
+                document.getElementById("lunit").innerHTML="km"
+            }
+            else if(lfrom == "km" && lto=="cm" ){
+                solution= linput * 100000;
+                solution1=solution.toFixed(1);
+                document.getElementById("loutput").innerHTML=solution1;
+                document.getElementById("lunit").innerHTML="cm"
+            }
+            else if(lfrom == "mm" && lto=="cm" ){
+                solution= linput / 100;
+                solution1=solution.toFixed(2);
+                document.getElementById("loutput").innerHTML=solution1;
+                document.getElementById("lunit").innerHTML="cm"
+            }
+            else if(lfrom == "cm" && lto=="mm" ){
+                solution= linput * 100;
+                solution1=solution.toFixed(2);
+                document.getElementById("loutput").innerHTML=solution1;
+                document.getElementById("lunit").innerHTML="mm"
+            }
+            else if(lfrom == "mm" && lto=="m" ){
+                solution= linput / 1000;
+                solution1=solution.toFixed(2);
+                document.getElementById("loutput").innerHTML=solution1;
+                document.getElementById("lunit").innerHTML="m"
+            }
+            else if(lfrom == "m" && lto=="mm" ){
+                solution= linput * 1000;
+                solution1=solution.toFixed(2);
+                document.getElementById("loutput").innerHTML=solution1;
+                document.getElementById("lunit").innerHTML="mm"
+            }
+            else if(lfrom == "mm" && lto=="km" ){
+                solution= linput / 1000000;
+                solution1=solution.toFixed(6);
+                document.getElementById("loutput").innerHTML=solution1;
+                document.getElementById("lunit").innerHTML="km"
+            }
+            else if(lfrom == "km" && lto=="mm" ){
+                solution= linput * 1000000;
+                solution1=solution.toFixed(2);
+                document.getElementById("loutput").innerHTML=solution1;
+                document.getElementById("lunit").innerHTML="mm"
+            }
+            else if(lfrom == "km" && lto=="mile" ){
+                solution= linput * 0.621371192;
+                solution1=solution.toFixed(2);
+                document.getElementById("loutput").innerHTML=solution1;
+                document.getElementById("lunit").innerHTML="miles"
+            }
+            else if(lfrom == "mile" && lto=="km" ){
+                solution= linput / 0.621371192;
+                solution1=solution.toFixed(2);
+                document.getElementById("loutput").innerHTML=solution1;
+                document.getElementById("lunit").innerHTML="km"
+            }
+            else if(lfrom == "mile" && lto=="m" ){
+                solution= linput * 1609.344;
+                solution1=solution.toFixed(2);
+                document.getElementById("loutput").innerHTML=solution1;
+                document.getElementById("lunit").innerHTML="m"
+            }
+            else if(lfrom == "m" && lto=="mile" ){
+                solution= linput * 0.0006213712;
+                solution1=solution.toFixed(2);
+                document.getElementById("loutput").innerHTML=solution1;
+                document.getElementById("lunit").innerHTML="m"
+            }
+            else{
+            document.getElementById("loutput").innerHTML="Try Again";
+            document.getElementById("lunit").innerHTML=" Valid units are: m/km/mm/cm/mile"
+        }
+            
+        }
+        
+    </script>
+</body>
+</html>
