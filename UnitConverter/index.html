@@ -23,6 +23,7 @@
             background-position: center;
             background-size: cover;
             overflow:hidden;
+            font-family: serif;
         }
 
         /* Top Navbar */
@@ -133,6 +134,7 @@
        .convert{
            /*border: 1px solid black;*/
            height: 500px;
+           margin-top: 70px;
        }
        
        .weight-converter{
@@ -169,7 +171,6 @@
        }
        .convert-title{
            background-color: rgba(135,206,235,0.4);
-           font-family: cursive;
        }
        .from, .to{
         float: left;
@@ -183,7 +184,7 @@
        }
        .from input{
             height: 40px;
-            width: 90%;
+            width: 80%;
             border-bottom: 1px solid black;
             border-top: none;
             border-left: none;
@@ -192,7 +193,7 @@
        }
        .to input{
             height: 40px;
-            width: 90%;
+            width: 80%;
             float: left;
             border-bottom: 1px solid black;
             border-top: none;
@@ -206,7 +207,7 @@
        #wwrite{
            margin-top: 30px;
            margin-left: 20px;
-           width: 305px;
+           width: 85%;
            height: 100px;
            float: left;
            font-size: 40px;
@@ -224,13 +225,18 @@
        .convertBtn{
            margin-top: 20px;
            padding: 10px 30px 10px 30px;
-           left: 33%;
-           position: relative;
+           margin-left: 10%;
+           width: 80%;
+           margin-right: 10%;
            font-weight: 800;
            background-color: skyblue;
            border:3px solid skyblue;
 
        }
+       
+      .backposition{
+          text-align: center;
+      }
        .convertBtn:hover{
             background-color: white;
        }
@@ -243,7 +249,7 @@
        #twrite{
            margin-top: 30px;
            margin-left: 20px;
-           width: 305px;
+           width: 85%;
            height: 100px;
            float: left;
            font-size: 40px;
@@ -263,7 +269,7 @@
       #lwrite{
            margin-top: 30px;
            margin-left: 20px;
-           width: 305px;
+           width: 85%;
            height: 100px;
            float: left;
            font-size: 40px;
@@ -283,7 +289,7 @@
       }
       .main-content{
           background-color: white;
-          height: 600px;
+          height: 100vh;
       }
       .footer{
           background-color: rgba(135,206,235,0.4);
@@ -292,11 +298,68 @@
           font-size: 25px;
           padding-bottom: 30px;
       }
-       @media (min-width: 780px) {
+       @media (min-width: 1431px) {
            .col-lg-4{
                width: 33.33%;
                float: left;
            }
+       }
+       @media (min-width: 1250px) and (max-width: 1450px){
+        .weight-converter{
+           width: 80%;
+           height: 100%;
+           margin-left: 10%;
+           
+        }
+        .temparature-converter{
+           width: 80%;
+           height: 100%;
+           margin-left: 10%;
+           
+        }
+        .length-converter{
+           width: 80%;
+           height: 100%;
+           margin-left: 10%;
+           
+        }
+        
+           .col-lg-4{
+               width: 33.33%;
+               float: left;
+           }
+       }
+       @media (min-width:1200px) {
+           .from{
+               width: 45%;
+           }
+           .to{
+               width: 45%;
+           }
+       }
+       @media (max-width: 1199px) {
+        .from{
+               width: 45%;
+               padding-left: 0%;
+           }
+           .to{
+               width: 45%;
+
+           }
+           
+       }
+       @media (max-width: 1245px) {
+           .convert{
+               margin-top: 70px;
+           }
+        .main-content{
+               height: 270vh;
+           }
+        #twrite{
+            width: 90%;
+            padding-left: 3%;
+            margin-left: 3%;
+        }
        }
     </style>
 </head>
@@ -389,9 +452,11 @@
             </label>
             <input type="text" id="lwrite" placeholder="Write Input" required>
         </div>
+        <div class="backposition">
             <button type="button" class="convertBtn" onclick="convertlength()">Convert</button>
             <div id="loutput">Output</div>
             <div id="lunit">Unit</div>
+        </div>
         </div>
     </div>
 </div>
