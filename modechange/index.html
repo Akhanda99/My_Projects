@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #all{
+            background-color: white;
+            height: 70vh;
+        }
+        .mode-btn{
+            padding: 30px 40px 30px 40px;
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+        #light{
+            background-color: grey;
+            color: white;
+            border: 1px solid grey;
+            outline: none;
+        
+        }
+        #detail{
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 40px;
+        }
+        #detail h4{
+            margin-top: 4%;
+            font-size: 45px;
+        }
+        #detail h1{
+            font-size: 80px;
+        }
+        #ex{
+            color:skyblue;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div id="all">
+    <button class="mode-btn" id="light" type="button" onclick="day()">Day Mode</button>
+    <button class="mode-btn" id="dark" type="button" onclick="night()">Night Mode</button>
+    <div id="detail">
+    <h4>Hello Everyone</h4>
+    <h1>Welcome to <span id="ex">my mode changing project</span></h1>
+    <p>&copy;Nashit Akhanda</p>
+</div>
+</div>
+<script>
+    
+    var light=document.getElementById("all");
+    var lightBtn=document.getElementById("light");
+    var darkBtn=document.getElementById("dark");
+    var write=document.getElementById("detail");
+    var myblog=document.getElementById("ex");
+    function day(){
+        light.style.background="white";
+        lightBtn.style.background="grey";
+        lightBtn.style.border="1px solid grey";
+        lightBtn.style.outline="none";
+        lightBtn.style.color="white";
+        
+        write.style.color="black";
+        darkBtn.style.background="white";
+        darkBtn.style.border="1px solid black";
+        darkBtn.style.outline="none";
+        darkBtn.style.color="black";
+        
+        myblog.style.color="skyblue";
+
+    }
+    function night(){
+        light.style.background="black";
+        darkBtn.style.background="grey";
+        darkBtn.style.border="1px solid grey";
+        darkBtn.style.outline="none";
+        darkBtn.style.color="white";
+        write.style.color="white";
+        
+        lightBtn.style.background="white";
+        lightBtn.style.border="1px solid black";
+        lightBtn.style.outline="none";
+        lightBtn.style.color="black";
+        myblog.style.color="greenyellow";
+    }
+</script>
+</body>
+</html>
